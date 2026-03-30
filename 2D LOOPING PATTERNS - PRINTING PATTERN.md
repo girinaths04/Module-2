@@ -1,41 +1,44 @@
-# Exp.No:2d
-## LOOPING PATTERNS - PRINTING PATTERN
+# Exp.No:2c
+## BUILT-IN FUNCTIONS AND LAMBDA FUNCTIONS - RELATING TWO NUMBERS
 
 ---
 
 ### AIM  
-To write a Python program to print a triangular star pattern using loops.
+To write a Python program to check the relation between two numbers — whether one number is greater than, equal to, or lesser than another — using a lambda function.
 
 ---
 
 ### ALGORITHM
 
 1. Begin the program.  
-2. Read the integer `n` from the user using `input()`. This will determine the number of rows in the pattern.  
-3. Initialize a variable `i = 0`. This will help adjust the spacing before the stars.  
-4. Loop through rows from `0` to `n - 1`:  
-   - For each row, calculate the number of spaces to print using the formula: `((n - rows - 1) * 2) + i`.  
-   - Print the calculated number of spaces using `print(" ", end="")`.  
-   - Increment `i` by 1 after each row.  
-   - Print stars using a nested loop: the number of stars in each row is `rows + 1`, printed using `print("*", end="  ")`.  
-   - Print a newline after each row using `print("")` to move to the next line.  
-5. Terminate the program.
+2. Use `eval()` to get two numbers (`num1` and `num2`) from the user.  
+3. Define a lambda function `max` that takes two arguments `x` and `y`.  
+4. The lambda function compares the numbers and prints:
+   - If `x > y`, then it prints: "`num2` is smaller than `num1`".
+   - Otherwise, it prints: "`num1` is smaller than `num2`".
+5. Call the lambda function by passing `num1` and `num2` as arguments.  
+6. Terminate the program.
 
 ---
 
 ### PROGRAM
+
 ```
 
-a = int(input())
-for i in range(1, a + 1):
-    for j in range(1, i + 1):
-        print(j, end=" ")
-    print(end="\n")
+compare = lambda a, b: (
+    f"{a} is greater than {b}" if a > b 
+    else (f"{a} is smaller than {b}" if a < b 
+    else f"{a} is equal to {b}")
+)
 
+input1 = int(input())
+input2 = int(input())
+print(compare(input1, input2))
 ```
 
 ### OUTPUT
-![image](https://github.com/user-attachments/assets/2769b95f-5e19-4b03-8cd2-8d09219dd840)
+![image](https://github.com/user-attachments/assets/709235d8-415c-4f2e-9ded-f01d6a22b302)
+
 
 ### RESULT
-Thus the program to print a pyramid pattern of numbers based on the number of rows entered by the user has been implemented and executed successfully.
+Thus the program to check the relation between two number using lambda function has been implemented and executed successfully.
